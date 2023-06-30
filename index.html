@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UDID</title>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+        <div>
+            <div>
+                <h1>Knowing the UDID of my iOS device</h1>
+                <p id="udid"></p>
+                <p id="err"></p>
+                <p>Step 1: Follow the next link and install the certificate</p>  
+                <p> <a class="button" href="get_mobileconfig.php">Give me tap</a> </p>
+                </div>
+            </div>
+            <script type="text/javascript">
+                // Function to retrieve the device UDID
+                function getDeviceUDID() {
+                    var udid = '';
+                    try {
+                        udid = device.udid; // Access the UDID using the device object
+                    } catch (error) {
+                        document.getElementById('err').innerHTML = 'eerror: ' + error;
+                        console.log('Error retrieving UDID: ' + error);
+                    }
+                    return udid;
+                }
+            
+                // Call the function to retrieve the UDID
+                var deviceUDID = getDeviceUDID();
+            
+                // Display the UDID on the webpage
+                document.getElementById('udid').innerHTML = 'UDID: ' + deviceUDID;
+            </script>
+    </body>
+</html>
