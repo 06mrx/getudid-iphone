@@ -11,19 +11,23 @@
         <meta charset="utf-8">
         <title>UDID</title>
         <meta name="viewport" content="width=device-width" />
+        <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.7/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <div>
-            <h1>Knowing the UDID of my iOS device</h1>
-                <p>UDID: <?php echo $_GET['UDID']; ?></p>
+        <div class="flex justify-center h-screen w-screen items-center">
+            <div class="flex flex-col items-center">
+                <h1 class="font-semibold text-3xl">Your Device Information</h1>
+                <p>UDID: <span class="text-green-600"><?php echo $_GET['UDID']; ?></span></p>
                 <p>Device product: <?php echo $_GET['DEVICE_PRODUCT']; ?></p>
                 <p>Device version: <?php echo $_GET['DEVICE_VERSION']; ?></p>
                 <p>Device name: <?php echo $_GET['DEVICE_NAME']; ?></p>
-
-                <p>Step 2: Send the information by email:</p>
-                <p>
-                    <a href="mailto:?subject=<?php echo $subject ?>&body=<?php echo $body?>">Give me tap</a>
-                </p>
+            </div>
+            
         </div>
     </body>
 </html>
